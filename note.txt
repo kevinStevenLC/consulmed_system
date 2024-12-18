@@ -1,0 +1,125 @@
+src/main/java/
+    com/miempresa/miproyecto/
+        ui/                      // Capa de Interfaz de Usuario (UI)
+            controllers/         // Controladores para manejar las vistas
+                MainController.java
+                OrderController.java
+            views/               // Archivos FXML de las vistas
+                MainView.fxml
+                OrderView.fxml
+        bl/                      // Capa de Lógica de Negocio (BL - Business Logic)
+            facades/             // Clases Facade para simplificar interacciones
+                OrderFacade.java
+                InventoryFacade.java
+            models/              // Entidades o POJOs del negocio
+                Order.java
+                Product.java
+            interfaces/          // Interfaces del negocio (por ejemplo, servicios o repositorios)
+                OrderService.java
+                ProductService.java
+        da/                      // Capa de Acceso a Datos (DA - Data Access)
+            repositories/        // Repositorios para la interacción con la BD
+                OrderRepository.java
+                ProductRepository.java
+            interfaces/          // Interfaces para el acceso a datos
+                IOrderRepository.java
+                IProductRepository.java
+						services/
+						models/
+        utils/                   // Clases de utilidad compartidas
+            DateUtils.java
+            StringUtils.java
+    resources/
+        css/                     // Estilos CSS para la interfaz
+            styles.css
+        images/                  // Imágenes y recursos gráficos
+            logo.png
+        fxml/                    // Archivos FXML (opcional, si prefieres centralizar los FXML aquí)
+            MainView.fxml
+            OrderView.fxml
+        application.properties   // Configuración general de la aplicación
+
+
+--- Patron Repositories ---
+src/main/java/
+    com/miapp/
+        models/
+            User.java
+
+        interfaces/
+            UserRepository.java
+
+        repository/
+            UserRepositoryImpl.java
+
+        services/
+            UserService.java
+
+        App.java // Clase principal para ejecutar
+
+==================================================
+
+Ficha Medica
+-numero de identificación
+-fecha de apertura
+-todos los datos del paciente
+-ultima toma de signos vitales
+-registro de todas las consultas medicas
+
+
+Flujo
+=Gestion de fichas medicas
+
+CRUD
+-create
+-delete
+-update
+-get
+getAlls()
+
+
+>Paciente
+ propiedades
+ (cédula, nombres, apellidos,
+ fecha de nacimiento, sexo, ocupación, tipo de sangre, teléfono, email, etc.) 
+
+>Consulta Medica
+
+Un enfermero realiza la toma de signos vitales Enfermero()
+ >TomaSignosVitales
+ propiedades:
+ -numero de registro
+ -nombre del enfermero encargado
+ -direccion del lugar
+ -datos del paciente
+ -registro de los signos vitales tomados List<SignosVitales>
+ >Signos Vitales
+ propiedades:
+ -tipo
+ -descripcion
+ -valor
+ -observacion
+
+ Despues...
+ >Medico
+ -numero de consulta
+ -datos del paciente
+ -Acceso a la ficha medica con ID de la toma de signos
+ -Formulario de examenes fisicos
+  >Examen Fisico (sistemas ; paciente)
+  propiedades:
+  -id
+  -padecimiento
+  -descripcion
+  >Examen Adicional
+  propiedades:
+  -id
+  -grupo
+  -descripcion del tipo de examen
+
+ Despues genera la consulta medica
+ ...
+ y se agrega a la ficha medica del paciente.
+
+
+==================================================
