@@ -2,14 +2,14 @@ package com.project.da.services;
 
 import java.util.List;
 
-import com.project.da.interfaces.ExamenAdicionalRepository;
+import com.project.da.interfaces.BaseRepository;
 import com.project.da.models.independiente.ExamenAdicional;
 
 public class ExamenAdicionalService {
 
-	private final ExamenAdicionalRepository examenAdicionalRepository;
+	private final BaseRepository<ExamenAdicional> examenAdicionalRepository;
 
-	public ExamenAdicionalService(ExamenAdicionalRepository examenAdicionalRepository) {
+	public ExamenAdicionalService(BaseRepository<ExamenAdicional> examenAdicionalRepository) {
 		this.examenAdicionalRepository = examenAdicionalRepository;
 	}
 

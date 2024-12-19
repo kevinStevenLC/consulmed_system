@@ -2,14 +2,14 @@ package com.project.da.services;
 
 import java.util.List;
 
-import com.project.da.interfaces.AntecedentesRepository;
+import com.project.da.interfaces.BaseRepository;
 import com.project.da.models.independiente.Antecedentes;
 
 public class AntecedentesService {
 
-	private final AntecedentesRepository antecedentesRepository;
+	private final BaseRepository<Antecedentes> antecedentesRepository;
 
-	public AntecedentesService(AntecedentesRepository antecedentesRepository) {
+	public AntecedentesService(BaseRepository<Antecedentes> antecedentesRepository) {
 		this.antecedentesRepository = antecedentesRepository;
 	}
 

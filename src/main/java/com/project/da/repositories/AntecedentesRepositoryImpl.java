@@ -2,10 +2,11 @@ package com.project.da.repositories;
 
 import java.util.List;
 
-import com.project.da.interfaces.AntecedentesRepository;
+//import com.project.da.interfaces.AntecedentesRepository;
+import com.project.da.interfaces.BaseRepository;
 import com.project.da.models.independiente.Antecedentes;
 
-public class AntecedentesRepositoryImpl implements AntecedentesRepository {
+public class AntecedentesRepositoryImpl implements BaseRepository<Antecedentes> {
 
 	@Override
 	public List<Antecedentes> findAll() {

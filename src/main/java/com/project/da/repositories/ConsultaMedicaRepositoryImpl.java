@@ -2,10 +2,11 @@ package com.project.da.repositories;
 
 import java.util.List;
 
-import com.project.da.interfaces.ConsultaMedicaRepository;
+import com.project.da.interfaces.BaseRepository;
+//import com.project.da.interfaces.ConsultaMedicaRepository;
 import com.project.da.models.principal.ConsultaMedica;
 
-public class ConsultaMedicaRepositoryImpl implements ConsultaMedicaRepository {
+public class ConsultaMedicaRepositoryImpl implements BaseRepository<ConsultaMedica> {
 
 	@Override
 	public List<ConsultaMedica> findAll() {

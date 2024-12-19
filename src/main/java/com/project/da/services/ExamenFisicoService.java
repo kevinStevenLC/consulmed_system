@@ -2,14 +2,14 @@ package com.project.da.services;
 
 import java.util.List;
 
-import com.project.da.interfaces.ExamenFisicoRepository;
+import com.project.da.interfaces.BaseRepository;
 import com.project.da.models.independiente.ExamenFisico;
 
 public class ExamenFisicoService {
 
-	private final ExamenFisicoRepository examenFisicoRepository;
+	private final BaseRepository<ExamenFisico> examenFisicoRepository;
 
-	public ExamenFisicoService(ExamenFisicoRepository examenFisicoRepository) {
+	public ExamenFisicoService(BaseRepository<ExamenFisico> examenFisicoRepository) {
 		this.examenFisicoRepository = examenFisicoRepository;
 	}
 

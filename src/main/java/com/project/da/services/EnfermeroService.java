@@ -2,14 +2,14 @@ package com.project.da.services;
 
 import java.util.List;
 
-import com.project.da.interfaces.EnfermeroRepository;
+import com.project.da.interfaces.BaseRepository;
 import com.project.da.models.independiente.Enfermero;
 
 public class EnfermeroService {
 
-	private final EnfermeroRepository enfermeroRepository;
+	private final BaseRepository<Enfermero> enfermeroRepository;
 
-	public EnfermeroService(EnfermeroRepository enfermeroRepository) {
+	public EnfermeroService(BaseRepository<Enfermero> enfermeroRepository) {
 		this.enfermeroRepository = enfermeroRepository;
 	}
 

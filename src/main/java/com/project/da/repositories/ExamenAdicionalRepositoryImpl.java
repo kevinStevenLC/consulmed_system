@@ -2,10 +2,11 @@ package com.project.da.repositories;
 
 import java.util.List;
 
-import com.project.da.interfaces.ExamenAdicionalRepository;
+import com.project.da.interfaces.BaseRepository;
+//import com.project.da.interfaces.ExamenAdicionalRepository;
 import com.project.da.models.independiente.ExamenAdicional;
 
-public class ExamenAdicionalRepositoryImpl implements ExamenAdicionalRepository {
+public class ExamenAdicionalRepositoryImpl implements BaseRepository<ExamenAdicional> {
 
 	@Override
 	public List<ExamenAdicional> findAll() {

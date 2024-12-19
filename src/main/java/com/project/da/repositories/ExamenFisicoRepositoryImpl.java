@@ -2,10 +2,11 @@ package com.project.da.repositories;
 
 import java.util.List;
 
-import com.project.da.interfaces.ExamenFisicoRepository;
+import com.project.da.interfaces.BaseRepository;
+//import com.project.da.interfaces.ExamenFisicoRepository;
 import com.project.da.models.independiente.ExamenFisico;
 
-public class ExamenFisicoRepositoryImpl implements ExamenFisicoRepository {
+public class ExamenFisicoRepositoryImpl implements BaseRepository<ExamenFisico> {
 
 	@Override
 	public List<ExamenFisico> findAll() {

@@ -2,14 +2,14 @@ package com.project.da.services;
 
 import java.util.List;
 
-import com.project.da.interfaces.ConsultaMedicaRepository;
+import com.project.da.interfaces.BaseRepository;
 import com.project.da.models.principal.ConsultaMedica;
 
 public class ConsultaMedicaService {
 
-	private final ConsultaMedicaRepository consultaMedicaRepository;
+	private final BaseRepository<ConsultaMedica> consultaMedicaRepository;
 
-	public ConsultaMedicaService(ConsultaMedicaRepository consultaMedicaRepository) {
+	public ConsultaMedicaService(BaseRepository<ConsultaMedica> consultaMedicaRepository) {
 		this.consultaMedicaRepository = consultaMedicaRepository;
 	}
 
