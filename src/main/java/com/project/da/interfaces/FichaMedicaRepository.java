@@ -2,7 +2,7 @@ package com.project.da.interfaces;
 
 import java.util.List;
 
-import com.project.da.models.FichaMedica;
+import com.project.da.models.principal.FichaMedica;
 
 public interface FichaMedicaRepository {
 

@@ -3,7 +3,7 @@ package com.project.da.repositories;
 import java.util.List;
 
 import com.project.da.interfaces.ConsultaMedicaRepository;
-import com.project.da.models.ConsultaMedica;
+import com.project.da.models.principal.ConsultaMedica;
 
 public class ConsultaMedicaRepositoryImpl implements ConsultaMedicaRepository {
 

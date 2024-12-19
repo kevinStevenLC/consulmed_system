@@ -3,8 +3,7 @@ package com.project.da.services;
 import java.util.List;
 
 import com.project.da.interfaces.ConsultaMedicaRepository;
-
-import com.project.da.models.ConsultaMedica;
+import com.project.da.models.principal.ConsultaMedica;
 
 public class ConsultaMedicaService {
 

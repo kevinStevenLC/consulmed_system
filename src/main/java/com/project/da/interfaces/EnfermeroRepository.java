@@ -2,7 +2,7 @@ package com.project.da.interfaces;
 
 import java.util.List;
 
-import com.project.da.models.Enfermero;
+import com.project.da.models.independiente.Enfermero;
 
 public interface EnfermeroRepository {
 

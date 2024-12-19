@@ -1,14 +1,24 @@
-package com.project.da.models;
+package com.project.da.models.independiente;
 
 public class ExamenFisico {
 	int id;
+	String grupo;
 	String padecimiento;
 	String descripcion;
 
-	public ExamenFisico(int id, String padecimiento, String descripcion) {
+	public ExamenFisico(int id, String grupo, String padecimiento, String descripcion) {
 		this.id = id;
+		this.grupo = grupo;
 		this.padecimiento = padecimiento;
 		this.descripcion = descripcion;
+	}
+
+	public String getGrupo() {
+		return this.grupo;
+	}
+
+	public void setGrupo(String grupo) {
+		this.grupo = grupo;
 	}
 
 	public int getId() {

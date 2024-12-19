@@ -3,7 +3,7 @@ package com.project.da.services;
 import java.util.List;
 
 import com.project.da.interfaces.FichaMedicaRepository;
-import com.project.da.models.FichaMedica;
+import com.project.da.models.principal.FichaMedica;
 
 public class FichaMedicaService {
 

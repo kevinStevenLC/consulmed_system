@@ -1,8 +1,9 @@
-package com.project.da.models;
+package com.project.da.models.principal;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import com.project.da.models.independiente.Antecedentes;
 
 //@table
 public class FichaMedica {
@@ -12,18 +13,14 @@ public class FichaMedica {
 
 	int id;
 	Paciente paciente;
-	TomaSignosVitales tomaSignosVitales;
+	TomaSignosVitales tomaSignosVitales;// puede ser null
 	Antecedentes antecedentes;
-	List<ConsultaMedica> consultasPrevias;
+	List<ConsultaMedica> consultasPrevias;// puede ser null
 
 	Date fechaApertura;
 
-	public FichaMedica(Paciente paciente, TomaSignosVitales tomaSignosVitales, Antecedentes antecedentes,
-			List<ConsultaMedica> consultasPrevias, Date fechaApertura) {
+	public FichaMedica(Paciente paciente, Date fechaApertura) {
 		this.paciente = paciente;
-		this.tomaSignosVitales = null; // empieza null
-		this.antecedentes = antecedentes;
-		this.consultasPrevias = new ArrayList<ConsultaMedica>();// empieza vacio
 		this.fechaApertura = fechaApertura;
 	}
 

@@ -2,7 +2,7 @@ package com.project.da.interfaces;
 
 import java.util.List;
 
-import com.project.da.models.Antecedentes;
+import com.project.da.models.independiente.Antecedentes;
 
 public interface AntecedentesRepository {
 

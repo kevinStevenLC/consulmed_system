@@ -1,4 +1,4 @@
-package com.project.da.models;
+package com.project.da.models.principal;
 
 public class Paciente {
 	String id;

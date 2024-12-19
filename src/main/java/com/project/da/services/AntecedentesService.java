@@ -3,7 +3,7 @@ package com.project.da.services;
 import java.util.List;
 
 import com.project.da.interfaces.AntecedentesRepository;
-import com.project.da.models.Antecedentes;
+import com.project.da.models.independiente.Antecedentes;
 
 public class AntecedentesService {
 

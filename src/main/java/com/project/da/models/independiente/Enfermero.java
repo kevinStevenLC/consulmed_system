@@ -1,4 +1,4 @@
-package com.project.da.models;
+package com.project.da.models.independiente;
 
 //@table
 public class Enfermero {

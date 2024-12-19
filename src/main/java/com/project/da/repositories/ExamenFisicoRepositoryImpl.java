@@ -2,23 +2,23 @@ package com.project.da.repositories;
 
 import java.util.List;
 
-import com.project.da.interfaces.AntecedentesRepository;
-import com.project.da.models.independiente.Antecedentes;
+import com.project.da.interfaces.ExamenFisicoRepository;
+import com.project.da.models.independiente.ExamenFisico;
 
-public class AntecedentesRepositoryImpl implements AntecedentesRepository {
+public class ExamenFisicoRepositoryImpl implements ExamenFisicoRepository {
 
 	@Override
-	public List<Antecedentes> findAll() {
+	public List<ExamenFisico> findAll() {
 		throw new UnsupportedOperationException("Unimplemented method 'findAll'");
 	}
 
 	@Override
-	public Antecedentes findById(int id) {
+	public ExamenFisico findById(int id) {
 		throw new UnsupportedOperationException("Unimplemented method 'findById'");
 	}
 
 	@Override
-	public boolean save(Antecedentes antecedentes) {
+	public boolean save(ExamenFisico antecedentes) {
 		throw new UnsupportedOperationException("Unimplemented method 'save'");
 	}
 
