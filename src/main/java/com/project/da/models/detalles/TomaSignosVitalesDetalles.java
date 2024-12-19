@@ -8,12 +8,18 @@ public class TomaSignosVitalesDetalles {
 	int id;
 	TomaSignosVitales tomasSignosVitales;
 	SignoVital signoVital;
+	Double valor;
+	String observaciones;
 
 	// |id |id_signosVitales| idSignoVital|
-	public TomaSignosVitalesDetalles(int id, TomaSignosVitales tomasSignosVitales, SignoVital signoVital) {
+
+	public TomaSignosVitalesDetalles(int id, TomaSignosVitales tomasSignosVitales, SignoVital signoVital, Double valor,
+			String observaciones) {
 		this.id = id;
 		this.tomasSignosVitales = tomasSignosVitales;
 		this.signoVital = signoVital;
+		this.valor = valor;
+		this.observaciones = observaciones;
 	}
 
 	public int getId() {
@@ -38,6 +44,22 @@ public class TomaSignosVitalesDetalles {
 
 	public void setSignoVital(SignoVital signoVital) {
 		this.signoVital = signoVital;
+	}
+
+	public Double getValor() {
+		return this.valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+
+	public String getObservaciones() {
+		return this.observaciones;
+	}
+
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
 	}
 
 }

@@ -24,4 +24,44 @@ public class TomaSignosVitales {
 		this.tomaSignosVitalesDetalles = tomaSignosVitalesDetalles;
 	}
 
+	public int getId() {
+		return this.id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Enfermero getEnfermeroEncargado() {
+		return this.enfermeroEncargado;
+	}
+
+	public void setEnfermeroEncargado(Enfermero enfermeroEncargado) {
+		this.enfermeroEncargado = enfermeroEncargado;
+	}
+
+	public String getDireccionLugar() {
+		return this.direccionLugar;
+	}
+
+	public void setDireccionLugar(String direccionLugar) {
+		this.direccionLugar = direccionLugar;
+	}
+
+	public Paciente getPaciente() {
+		return this.paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+
+	public List<TomaSignosVitalesDetalles> getTomaSignosVitalesDetalles() {
+		return this.tomaSignosVitalesDetalles;
+	}
+
+	public void setTomaSignosVitalesDetalles(List<TomaSignosVitalesDetalles> tomaSignosVitalesDetalles) {
+		this.tomaSignosVitalesDetalles = tomaSignosVitalesDetalles;
+	}
+
 }

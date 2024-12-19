@@ -22,4 +22,44 @@ public class ConsultaMedica {
 		this.fichaMedica = fichaMedica;
 	}
 
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getNumeroConsulta() {
+		return this.numeroConsulta;
+	}
+
+	public void setNumeroConsulta(String numeroConsulta) {
+		this.numeroConsulta = numeroConsulta;
+	}
+
+	public FichaMedica getFichaMedica() {
+		return this.fichaMedica;
+	}
+
+	public void setFichaMedica(FichaMedica fichaMedica) {
+		this.fichaMedica = fichaMedica;
+	}
+
+	public ExamenFisico getExamenFisico() {
+		return this.examenFisico;
+	}
+
+	public void setExamenFisico(ExamenFisico examenFisico) {
+		this.examenFisico = examenFisico;
+	}
+
+	public ExamenAdicional getExamenAdicional() {
+		return this.examenAdicional;
+	}
+
+	public void setExamenAdicional(ExamenAdicional examenAdicional) {
+		this.examenAdicional = examenAdicional;
+	}
+
 }
