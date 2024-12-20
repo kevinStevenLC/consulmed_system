@@ -3,23 +3,22 @@ package com.project.da.repositories;
 import java.util.List;
 
 import com.project.da.interfaces.BaseRepository;
-//import com.project.da.interfaces.ExamenFisicoRepository;
-import com.project.da.models.independiente.ExamenFisico;
+import com.project.da.models.principal.TomaSignosVitales;
 
-public class ExamenFisicoRepositoryImpl implements BaseRepository<ExamenFisico> {
+public class TomaSignosVitalesDetallesRepositoryImpl implements BaseRepository<TomaSignosVitales> {
 
 	@Override
-	public List<ExamenFisico> findAll() {
+	public List<TomaSignosVitales> findAll() {
 		throw new UnsupportedOperationException("Unimplemented method 'findAll'");
 	}
 
 	@Override
-	public ExamenFisico findById(int id) {
+	public TomaSignosVitales findById(int id) {
 		throw new UnsupportedOperationException("Unimplemented method 'findById'");
 	}
 
 	@Override
-	public boolean save(ExamenFisico antecedentes) {
+	public boolean save(TomaSignosVitales entidad) {
 		throw new UnsupportedOperationException("Unimplemented method 'save'");
 	}
 
