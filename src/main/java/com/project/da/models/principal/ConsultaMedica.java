@@ -1,5 +1,6 @@
 package com.project.da.models.principal;
 
+import com.project.da.models.detalles.ExamenDetalles;
 import com.project.da.models.independiente.ExamenAdicional;
 import com.project.da.models.independiente.ExamenFisico;
 
@@ -10,8 +11,11 @@ public class ConsultaMedica {
 	String numeroConsulta;
 	FichaMedica fichaMedica; // accedes: SignosVital, Antecedentes, Paciente
 
-	ExamenFisico examenFisico;
-	ExamenAdicional examenAdicional;
+	ExamenDetalles examenDetalles;
+	/*
+	 * ExamenFisico examenFisico;
+	 * ExamenAdicional examenAdicional;
+	 */
 
 	// |id | numero_consulta | id_fichaMedica | idExamenFisico(null) |
 	// idExamenAdicional(null) |
@@ -46,20 +50,29 @@ public class ConsultaMedica {
 		this.fichaMedica = fichaMedica;
 	}
 
-	public ExamenFisico getExamenFisico() {
-		return this.examenFisico;
+	public ExamenDetalles getExamenDetalles() {
+		return this.examenDetalles;
 	}
 
-	public void setExamenFisico(ExamenFisico examenFisico) {
-		this.examenFisico = examenFisico;
+	public void setExamenDetalles(ExamenDetalles examenDetalles) {
+		this.examenDetalles = examenDetalles;
 	}
 
-	public ExamenAdicional getExamenAdicional() {
-		return this.examenAdicional;
-	}
-
-	public void setExamenAdicional(ExamenAdicional examenAdicional) {
-		this.examenAdicional = examenAdicional;
-	}
-
+	/*
+	 * public ExamenFisico getExamenFisico() {
+	 * return this.examenFisico;
+	 * }
+	 * 
+	 * public void setExamenFisico(ExamenFisico examenFisico) {
+	 * this.examenFisico = examenFisico;
+	 * }
+	 * 
+	 * public ExamenAdicional getExamenAdicional() {
+	 * return this.examenAdicional;
+	 * }
+	 * 
+	 * public void setExamenAdicional(ExamenAdicional examenAdicional) {
+	 * this.examenAdicional = examenAdicional;
+	 * }
+	 */
 }

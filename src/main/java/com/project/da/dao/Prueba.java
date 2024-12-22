@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import com.project.da.models.detalles.ExamenDetalles;
 import com.project.da.models.detalles.TomaSignosVitalesDetalles;
 import com.project.da.models.independiente.Antecedentes;
 import com.project.da.models.independiente.Enfermero;
@@ -77,9 +78,10 @@ public class Prueba {
 				"Ganglios inflamados, dolor, rigidez");
 		ExamenAdicional examAdicional = new ExamenAdicional(1, "Laboratorio", "Análisis de sangre general");
 
+		ExamenDetalles examenDetalles = new ExamenDetalles(1, examAdicional, examFisico);
+
 		// agregar a la consulta medica
-		consultaMedica.setExamenFisico(examFisico);
-		consultaMedica.setExamenAdicional(examAdicional);
+		consultaMedica.setExamenDetalles(examenDetalles);
 
 		// abrimos la ficha medica y agregamos la consulta medica
 		fichaMedica.setConsultasPrevias((new ArrayList<ConsultaMedica>()));
@@ -93,15 +95,20 @@ public class Prueba {
 
 		for (TomaSignosVitalesDetalles tmd : tomaSignosVitales.getTomaSignosVitalesDetalles()) {
 			System.out.printf(
-					"------------------------------%nID: %d - Valor: %.2f%n -Descripcion: %s%n - Observaciones: %s%n------------------------------%n",
+					"------------------------------%nID: %d - Valor: %.2f%n - Descripcion: %s%n - Observaciones: %s%n------------------------------%n",
 					tmd.getId(), tmd.getValor(),
 					tmd.getSignoVital().getDescripcion(), tmd.getObservaciones());
 		}
 
 		System.out.println("Revision de los signos vitales...");
 		Thread.sleep(2000);
-		System.out.printf("Examenes Fisicos: %s%nExamen Adicional: %s", consultaMedica.getExamenFisico().getDescripcion(),
-				consultaMedica.getExamenAdicional().getDescripcion());
+		System.out.printf(
+				"Examenes Fisicos%nPadecimiento: %s - Descripcion: %s - Grupo: %s%nExamen Adicional%nGrupo: %s - Descripcion: %s",
+				consultaMedica.getExamenDetalles().getExamenFisico().getPadecimiento(),
+				consultaMedica.getExamenDetalles().getExamenFisico().getDescripcion(),
+				consultaMedica.getExamenDetalles().getExamenFisico().getGrupo(),
+				consultaMedica.getExamenDetalles().getExamenAdicional().getGrupo(),
+				consultaMedica.getExamenDetalles().getExamenAdicional().getDescripcion());
 
 	}
 
