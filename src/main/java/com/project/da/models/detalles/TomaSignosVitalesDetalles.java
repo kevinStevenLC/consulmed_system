@@ -1,22 +1,19 @@
 package com.project.da.models.detalles;
 
 import com.project.da.models.independiente.SignoVital;
-import com.project.da.models.principal.TomaSignosVitales;
 
 public class TomaSignosVitalesDetalles {
 
 	int id;
-	TomaSignosVitales tomasSignosVitales;
 	SignoVital signoVital;
 	Double valor;
 	String observaciones;
 
 	// |id |id_signosVitales| idSignoVital|
 
-	public TomaSignosVitalesDetalles(int id, TomaSignosVitales tomasSignosVitales, SignoVital signoVital, Double valor,
+	public TomaSignosVitalesDetalles(int id, SignoVital signoVital, Double valor,
 			String observaciones) {
 		this.id = id;
-		this.tomasSignosVitales = tomasSignosVitales;
 		this.signoVital = signoVital;
 		this.valor = valor;
 		this.observaciones = observaciones;
@@ -28,14 +25,6 @@ public class TomaSignosVitalesDetalles {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public TomaSignosVitales getTomasSignosVitales() {
-		return this.tomasSignosVitales;
-	}
-
-	public void setTomasSignosVitales(TomaSignosVitales tomasSignosVitales) {
-		this.tomasSignosVitales = tomasSignosVitales;
 	}
 
 	public SignoVital getSignoVital() {

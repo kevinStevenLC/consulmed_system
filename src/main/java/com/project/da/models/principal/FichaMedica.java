@@ -19,9 +19,11 @@ public class FichaMedica {
 
 	Date fechaApertura;
 
-	public FichaMedica(Paciente paciente, Date fechaApertura) {
+	public FichaMedica(int id, Paciente paciente, Date fechaApertura, Antecedentes antecedentes) {
+		this.id = id;
 		this.paciente = paciente;
 		this.fechaApertura = fechaApertura;
+		this.antecedentes = antecedentes;
 	}
 
 	public Paciente getPaciente() {

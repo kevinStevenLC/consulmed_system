@@ -6,7 +6,7 @@ import com.project.da.models.independiente.ExamenFisico;
 //@table
 public class ConsultaMedica {
 
-	String id;
+	int id;
 	String numeroConsulta;
 	FichaMedica fichaMedica; // accedes: SignosVital, Antecedentes, Paciente
 
@@ -16,17 +16,17 @@ public class ConsultaMedica {
 	// |id | numero_consulta | id_fichaMedica | idExamenFisico(null) |
 	// idExamenAdicional(null) |
 
-	public ConsultaMedica(String id, String numeroConsulta, FichaMedica fichaMedica) {
+	public ConsultaMedica(int id, String numeroConsulta, FichaMedica fichaMedica) {
 		this.id = id;
 		this.numeroConsulta = numeroConsulta;
 		this.fichaMedica = fichaMedica;
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

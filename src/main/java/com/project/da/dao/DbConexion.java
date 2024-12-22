@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class DbConexion {
 
 	// Constantes de la base de datos
-	private static final String BD = "bdprueba_idiomas";
+	private static final String BD = "consulmed_db";
 	private static final String URL = "jdbc:mysql://localhost:6603";
 	private static final String USER = "root";
 	private static final String PASS = "123456";

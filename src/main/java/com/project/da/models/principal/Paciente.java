@@ -1,7 +1,7 @@
 package com.project.da.models.principal;
 
 public class Paciente {
-	String id;
+	int id;
 	String nombres;
 	String apellidos;
 	String tipoSangre;
@@ -9,7 +9,7 @@ public class Paciente {
 	String email;
 	String genero;
 
-	public Paciente(String id, String nombres, String apellidos, String tipoSangre, String telefono, String email,
+	public Paciente(int id, String nombres, String apellidos, String tipoSangre, String telefono, String email,
 			String genero) {
 		this.id = id;
 		this.nombres = nombres;
@@ -20,11 +20,11 @@ public class Paciente {
 		this.genero = genero;
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
