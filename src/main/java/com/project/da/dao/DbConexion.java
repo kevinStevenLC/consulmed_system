@@ -22,7 +22,7 @@ public class DbConexion {
 	private DbConexion() {
 	}
 
-	public static Connection getcCnexion_db() throws SQLException {
+	public static Connection getConection_db() throws SQLException {
 		if (conn == null || conn.isClosed()) {
 			try {
 				// Cargar controlador JDBC
@@ -41,7 +41,7 @@ public class DbConexion {
 
 	public static void main(String[] args) throws SQLException, InterruptedException {
 		// Probar la conexión a la base de datos
-		Connection db_conexion = DbConexion.getcCnexion_db();
+		Connection db_conexion = DbConexion.getConection_db();
 		Thread.sleep(3000);
 		db_conexion.close();
 	}

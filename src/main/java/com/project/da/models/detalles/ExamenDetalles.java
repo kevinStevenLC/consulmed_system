@@ -1,18 +1,20 @@
 package com.project.da.models.detalles;
 
+import java.util.List;
+
 import com.project.da.models.independiente.ExamenAdicional;
 import com.project.da.models.independiente.ExamenFisico;
 
 public class ExamenDetalles {
 
 	int id;
-	ExamenAdicional examenAdicional;
-	ExamenFisico examenFisico;
+	List<ExamenAdicional> examenAdicionalList;
+	List<ExamenFisico> examenFisicoList;
 
-	public ExamenDetalles(int id, ExamenAdicional examenAdicional, ExamenFisico examenFisico) {
+	public ExamenDetalles(int id, List<ExamenAdicional> examenAdicionalList, List<ExamenFisico> examenFisicoList) {
 		this.id = id;
-		this.examenAdicional = examenAdicional;
-		this.examenFisico = examenFisico;
+		this.examenAdicionalList = examenAdicionalList;
+		this.examenFisicoList = examenFisicoList;
 	}
 
 	public int getId() {
@@ -23,20 +25,20 @@ public class ExamenDetalles {
 		this.id = id;
 	}
 
-	public ExamenAdicional getExamenAdicional() {
-		return this.examenAdicional;
+	public List<ExamenAdicional> getExamenAdicionalList() {
+		return this.examenAdicionalList;
 	}
 
-	public void setExamenAdicional(ExamenAdicional examenAdicional) {
-		this.examenAdicional = examenAdicional;
+	public void setExamenAdicionalList(List<ExamenAdicional> examenAdicionalList) {
+		this.examenAdicionalList = examenAdicionalList;
 	}
 
-	public ExamenFisico getExamenFisico() {
-		return this.examenFisico;
+	public List<ExamenFisico> getExamenFisicoList() {
+		return this.examenFisicoList;
 	}
 
-	public void setExamenFisico(ExamenFisico examenFisico) {
-		this.examenFisico = examenFisico;
+	public void setExamenFisicoList(List<ExamenFisico> examenFisicoList) {
+		this.examenFisicoList = examenFisicoList;
 	}
 
 }

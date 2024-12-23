@@ -2,6 +2,7 @@ package com.project.da.dao;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 import com.project.da.models.detalles.ExamenDetalles;
@@ -70,6 +71,9 @@ public class Prueba {
 		tomaSignosVitales.getTomaSignosVitalesDetalles().add(sgVital2Detalles);
 		tomaSignosVitales.getTomaSignosVitalesDetalles().add(sgVital3Detalles);
 
+		// asignar toma dde signos vitales a la ficha medica
+		fichaMedica.setTomaSignosVitales(tomaSignosVitales);
+
 		// Al hacer una consulta medica
 		ConsultaMedica consultaMedica = new ConsultaMedica(1, "001", fichaMedica);
 
@@ -78,7 +82,7 @@ public class Prueba {
 				"Ganglios inflamados, dolor, rigidez");
 		ExamenAdicional examAdicional = new ExamenAdicional(1, "Laboratorio", "Análisis de sangre general");
 
-		ExamenDetalles examenDetalles = new ExamenDetalles(1, examAdicional, examFisico);
+		ExamenDetalles examenDetalles = new ExamenDetalles(1, Arrays.asList(examAdicional), Arrays.asList(examFisico));
 
 		// agregar a la consulta medica
 		consultaMedica.setExamenDetalles(examenDetalles);
@@ -104,11 +108,11 @@ public class Prueba {
 		Thread.sleep(2000);
 		System.out.printf(
 				"Examenes Fisicos%nPadecimiento: %s - Descripcion: %s - Grupo: %s%nExamen Adicional%nGrupo: %s - Descripcion: %s",
-				consultaMedica.getExamenDetalles().getExamenFisico().getPadecimiento(),
-				consultaMedica.getExamenDetalles().getExamenFisico().getDescripcion(),
-				consultaMedica.getExamenDetalles().getExamenFisico().getGrupo(),
-				consultaMedica.getExamenDetalles().getExamenAdicional().getGrupo(),
-				consultaMedica.getExamenDetalles().getExamenAdicional().getDescripcion());
+				consultaMedica.getExamenDetalles().getExamenFisicoList().get(0).getPadecimiento(),
+				consultaMedica.getExamenDetalles().getExamenFisicoList().get(0).getDescripcion(),
+				consultaMedica.getExamenDetalles().getExamenFisicoList().get(0).getGrupo(),
+				consultaMedica.getExamenDetalles().getExamenAdicionalList().get(0).getGrupo(),
+				consultaMedica.getExamenDetalles().getExamenAdicionalList().get(0).getDescripcion());
 
 	}
 

@@ -1,8 +1,6 @@
 package com.project.da.models.principal;
 
 import com.project.da.models.detalles.ExamenDetalles;
-import com.project.da.models.independiente.ExamenAdicional;
-import com.project.da.models.independiente.ExamenFisico;
 
 //@table
 public class ConsultaMedica {
