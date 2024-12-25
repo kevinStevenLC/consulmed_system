@@ -1,25 +1,50 @@
 package com.project.da.repositories;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
+import com.project.da.dao.DbConexion;
 import com.project.da.interfaces.BaseRepository;
-import com.project.da.models.principal.TomaSignosVitales;
+import com.project.da.models.detalles.TomaSignosVitalesDetalles;
 
-public class TomaSignosVitalesDetallesRepositoryImpl implements BaseRepository<TomaSignosVitales> {
+public class TomaSignosVitalesDetallesRepositoryImpl implements BaseRepository<TomaSignosVitalesDetalles> {
 
 	@Override
-	public List<TomaSignosVitales> findAll() {
+	public List<TomaSignosVitalesDetalles> findAll() {
 		throw new UnsupportedOperationException("Unimplemented method 'findAll'");
 	}
 
 	@Override
-	public TomaSignosVitales findById(int id) {
+	public TomaSignosVitalesDetalles findById(int id) {
 		throw new UnsupportedOperationException("Unimplemented method 'findById'");
 	}
 
+	// Para crear un objeto de de signo vital con sus detalles, puedes tener maximo
+	// 5.
 	@Override
-	public boolean save(TomaSignosVitales entidad) {
-		throw new UnsupportedOperationException("Unimplemented method 'save'");
+	public boolean save(TomaSignosVitalesDetalles entidad) throws SQLException {
+		String query = "INSERT INTO tomasignosvitalesdetalles (idTomaSignosVitales, valor, observaciones, idSignoVital) VALUES (?, ?, ?, ?)";
+		try {
+			PreparedStatement preparedStatement = DbConexion.getConection_db().prepareStatement(query);
+			preparedStatement.setInt(1, entidad.getTomaSignosVitales().getId());
+			preparedStatement.setDouble(2, entidad.getValor());
+			preparedStatement.setString(3, entidad.getObservaciones());
+			preparedStatement.setInt(4, entidad.getSignoVital().getId());
+
+			int rowInserted = preparedStatement.executeUpdate();
+			if (rowInserted > 0) {
+				System.out.println("Toma de signos vitales detalles (element) agregado: " + rowInserted);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		throw new UnsupportedOperationException("Unimplemented method 'delete'");
 	}
 
 }

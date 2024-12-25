@@ -1,5 +1,6 @@
 package com.project.da.services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.project.da.interfaces.FichaMedicaRepository;
@@ -21,7 +22,7 @@ public class FichaMedicaService {
 		return this.fichaMedicaRepository.findById(id);
 	}
 
-	public boolean guardarFichaMedica(FichaMedica fichaMedica) {
+	public boolean guardarFichaMedica(FichaMedica fichaMedica) throws SQLException {
 		return this.fichaMedicaRepository.save(fichaMedica);
 	}
 

@@ -1,5 +1,6 @@
 package com.project.da.interfaces;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.project.da.models.principal.FichaMedica;
@@ -10,7 +11,7 @@ public interface FichaMedicaRepository {
 
 	FichaMedica findById(int id);
 
-	boolean save(FichaMedica fichaMedica);
+	boolean save(FichaMedica fichaMedica) throws SQLException;
 
 	boolean update(FichaMedica fichaMedica);
 

@@ -1,5 +1,6 @@
 package com.project.da.models.principal;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.project.da.models.detalles.TomaSignosVitalesDetalles;
@@ -12,16 +13,15 @@ public class TomaSignosVitales {
 	String direccionLugar;
 	// fichamedica/datos del paciente/
 	Paciente paciente;
-	List<TomaSignosVitalesDetalles> tomaSignosVitalesDetalles; // signos vitales evaluados
+	List<TomaSignosVitalesDetalles> tomaSignosVitalesDetalles; // signos vitales evaluados //
 
 	// |id | id_enfermero | direccion | id_paciente | |
-	public TomaSignosVitales(int id, Enfermero enfermeroEncargado, String direccionLugar,
-			Paciente paciente, List<TomaSignosVitalesDetalles> tomaSignosVitalesDetalles) {
-		this.id = id;
+	public TomaSignosVitales(Enfermero enfermeroEncargado, String direccionLugar,
+			Paciente paciente) {
 		this.enfermeroEncargado = enfermeroEncargado;
 		this.direccionLugar = direccionLugar;
 		this.paciente = paciente;
-		this.tomaSignosVitalesDetalles = tomaSignosVitalesDetalles;
+		this.tomaSignosVitalesDetalles = new ArrayList<>();
 	}
 
 	public int getId() {

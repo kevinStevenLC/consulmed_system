@@ -1,6 +1,6 @@
 package com.project.da.models.principal;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import com.project.da.models.independiente.Antecedentes;
@@ -19,8 +19,7 @@ public class FichaMedica {
 
 	Date fechaApertura;
 
-	public FichaMedica(int id, Paciente paciente, Date fechaApertura, Antecedentes antecedentes) {
-		this.id = id;
+	public FichaMedica(Paciente paciente, Date fechaApertura, Antecedentes antecedentes) {
 		this.paciente = paciente;
 		this.fechaApertura = fechaApertura;
 		this.antecedentes = antecedentes;
@@ -72,6 +71,18 @@ public class FichaMedica {
 
 	public void setAntecedentes(Antecedentes antecedentes) {
 		this.antecedentes = antecedentes;
+	}
+
+	@Override
+	public String toString() {
+		return "{" +
+				" id='" + getId() + "'" +
+				", paciente='" + getPaciente() + "'" +
+				", tomaSignosVitales='" + getTomaSignosVitales() + "'" +
+				", antecedentes='" + getAntecedentes() + "'" +
+				", consultasPrevias='" + getConsultasPrevias() + "'" +
+				", fechaApertura='" + getFechaApertura() + "'" +
+				"}";
 	}
 
 }

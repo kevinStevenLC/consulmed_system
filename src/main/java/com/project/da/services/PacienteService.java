@@ -1,5 +1,6 @@
 package com.project.da.services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.project.da.interfaces.BaseRepository;
@@ -21,7 +22,7 @@ public class PacienteService {
 		return this.pacienteRepository.findById(id);
 	}
 
-	public boolean guardarPaciente(Paciente paciente) {
+	public boolean guardarPaciente(Paciente paciente) throws SQLException {
 		return this.pacienteRepository.save(paciente);
 	}
 

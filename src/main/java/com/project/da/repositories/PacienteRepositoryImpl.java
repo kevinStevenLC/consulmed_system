@@ -19,7 +19,13 @@ public class PacienteRepositoryImpl implements BaseRepository<Paciente> {
 
 	@Override
 	public boolean save(Paciente entidad) {
+
 		throw new UnsupportedOperationException("Unimplemented method 'save'");
+	}
+
+	@Override
+	public boolean delete(int id) {
+		throw new UnsupportedOperationException("Unimplemented method 'delete'");
 	}
 
 }

@@ -23,7 +23,12 @@ public class ConsultaMedicaRepositoryImpl implements BaseRepository<ConsultaMedi
 	@Override
 	public boolean save(ConsultaMedica antecedentes) {
 
-		throw new UnsupportedOperationException("Unimplemented method 'save'");
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		throw new UnsupportedOperationException("Unimplemented method 'delete'");
 	}
 
 }

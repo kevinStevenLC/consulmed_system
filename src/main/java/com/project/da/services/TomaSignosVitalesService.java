@@ -1,5 +1,6 @@
 package com.project.da.services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.project.da.interfaces.BaseRepository;
@@ -21,7 +22,7 @@ public class TomaSignosVitalesService {
 		return this.tomaSignosVitalesRepository.findById(id);
 	}
 
-	public boolean guardarTomaSignosVitales(TomaSignosVitales tomaSignosVitales) {
+	public boolean guardarTomaSignosVitales(TomaSignosVitales tomaSignosVitales) throws SQLException {
 		return this.tomaSignosVitalesRepository.save(tomaSignosVitales);
 	}
 

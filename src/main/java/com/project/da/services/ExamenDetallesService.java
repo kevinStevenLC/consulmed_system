@@ -1,5 +1,6 @@
 package com.project.da.services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.project.da.interfaces.BaseRepository;
@@ -21,7 +22,7 @@ public class ExamenDetallesService {
 		return this.examenDetalles.findById(id);
 	}
 
-	public boolean guardarExamenDetalles(ExamenDetalles examenDetalles) {
+	public boolean guardarExamenDetalles(ExamenDetalles examenDetalles) throws SQLException {
 		return this.examenDetalles.save(examenDetalles);
 	}
 

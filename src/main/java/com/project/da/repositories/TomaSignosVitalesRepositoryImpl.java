@@ -1,7 +1,9 @@
 package com.project.da.repositories;
 
+import java.sql.PreparedStatement;
 import java.util.List;
 
+import com.project.da.dao.DbConexion;
 import com.project.da.interfaces.BaseRepository;
 import com.project.da.models.principal.TomaSignosVitales;
 
@@ -19,7 +21,27 @@ public class TomaSignosVitalesRepositoryImpl implements BaseRepository<TomaSigno
 
 	@Override
 	public boolean save(TomaSignosVitales entidad) {
-		throw new UnsupportedOperationException("Unimplemented method 'save'");
+		String query = "INSERT INTO tomasignosvitales (direccion, idEnfermero, idPaciente) VALUES (?, ?, ?)";
+		try {
+			PreparedStatement preparedStatement = DbConexion.getConection_db().prepareStatement(query);
+			preparedStatement.setString(1, entidad.getDireccionLugar());
+			preparedStatement.setInt(2, entidad.getEnfermeroEncargado().getId());
+			preparedStatement.setInt(3, entidad.getPaciente().getId());
+
+			int rowInserted = preparedStatement.executeUpdate();
+			if (rowInserted > 0) {
+				System.out.println("signos vitales registrada.");
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		throw new UnsupportedOperationException("Unimplemented method 'delete'");
 	}
 
 }

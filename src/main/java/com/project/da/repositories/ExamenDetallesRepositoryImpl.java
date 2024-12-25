@@ -22,4 +22,9 @@ public class ExamenDetallesRepositoryImpl implements BaseRepository<ExamenDetall
 		throw new UnsupportedOperationException("Unimplemented method 'save'");
 	}
 
+	@Override
+	public boolean delete(int id) {
+		throw new UnsupportedOperationException("Unimplemented method 'delete'");
+	}
+
 }

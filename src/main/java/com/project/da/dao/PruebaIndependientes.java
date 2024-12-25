@@ -3,7 +3,7 @@ package com.project.da.dao;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
+import java.sql.Date;
 
 import com.project.da.models.detalles.ExamenDetalles;
 import com.project.da.models.detalles.TomaSignosVitalesDetalles;
@@ -17,11 +17,12 @@ import com.project.da.models.principal.FichaMedica;
 import com.project.da.models.principal.Paciente;
 import com.project.da.models.principal.TomaSignosVitales;
 
-public class Prueba {
+public class PruebaIndependientes {
 
 	public static void main(String[] args) throws InterruptedException {
 		// apertura ficha al darle a crear ficha medica
-		FichaMedica fichaMedica = new FichaMedica(1, null, new Date(), null);
+		FichaMedica fichaMedica = new FichaMedica(null, new Date(System.currentTimeMillis()), null);
+		fichaMedica.setId(1);
 
 		SimpleDateFormat fechaFormateada = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
@@ -53,19 +54,24 @@ public class Prueba {
 		Enfermero enfermeroEncargado = new Enfermero(1, "juan gabriel");
 
 		// creando Toma signos vitales [vacio1]
-		TomaSignosVitales tomaSignosVitales = new TomaSignosVitales(1, enfermeroEncargado, "flor de bastion bloque 22",
-				paciente, new ArrayList<TomaSignosVitalesDetalles>()); // []
+		TomaSignosVitales tomaSignosVitales = new TomaSignosVitales(enfermeroEncargado, "flor de bastion bloque 22",
+				paciente); // []
+		tomaSignosVitales.setId(1);
 
 		// Tomados
 		SignoVital sgVital1 = new SignoVital(2, "Presión Arterial");
 		SignoVital sgVital2 = new SignoVital(3, "Frecuencia Cardíaca");
 		SignoVital sgVital3 = new SignoVital(4, "Temperatura");
 
-		TomaSignosVitalesDetalles sgVital1Detalles = new TomaSignosVitalesDetalles(1, sgVital1, 100.10,
-				"se va a morir XD 1");
-		TomaSignosVitalesDetalles sgVital2Detalles = new TomaSignosVitalesDetalles(2, sgVital2, 200.0,
-				"se va a morir XD 2");
-		TomaSignosVitalesDetalles sgVital3Detalles = new TomaSignosVitalesDetalles(3, sgVital3, 140.0, "bajo este man");
+		TomaSignosVitalesDetalles sgVital1Detalles = new TomaSignosVitalesDetalles(sgVital1, 100.10,
+				"se va a morir XD 1", tomaSignosVitales);
+		sgVital1Detalles.setId(1);
+		TomaSignosVitalesDetalles sgVital2Detalles = new TomaSignosVitalesDetalles(sgVital2, 200.0,
+				"se va a morir XD 2", tomaSignosVitales);
+		sgVital2Detalles.setId(2);
+		TomaSignosVitalesDetalles sgVital3Detalles = new TomaSignosVitalesDetalles(sgVital3, 140.0, "bajo este man",
+				tomaSignosVitales);
+		sgVital3Detalles.setId(3);
 
 		tomaSignosVitales.getTomaSignosVitalesDetalles().add(sgVital1Detalles);
 		tomaSignosVitales.getTomaSignosVitalesDetalles().add(sgVital2Detalles);
