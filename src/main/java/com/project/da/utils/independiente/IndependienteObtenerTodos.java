@@ -76,7 +76,7 @@ public class IndependienteObtenerTodos {
 				ExamenFisico eF = new ExamenFisico(id, grupo, padecimiento, descripcion);
 				examenFisicoList.add(eF);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
@@ -99,7 +99,7 @@ public class IndependienteObtenerTodos {
 				ExamenAdicional eA = new ExamenAdicional(id, grupo, descripcion);
 				examenAdicionalList.add(eA);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 

@@ -29,6 +29,7 @@ import com.project.da.services.FichaMedicaService;
 import com.project.da.services.TomaSignosVitalesDetallesService;
 import com.project.da.services.TomaSignosVitalesService;
 
+@SuppressWarnings("unused") // para quitar advertencias de variables no usadas.
 public class PruebaPrincipal {
 	/*
 	 * Flujo

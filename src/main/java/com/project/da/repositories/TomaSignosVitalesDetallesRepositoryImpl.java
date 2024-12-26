@@ -49,7 +49,6 @@ public class TomaSignosVitalesDetallesRepositoryImpl implements BaseRepository<T
 
 	@Override
 	public boolean update(TomaSignosVitalesDetalles entidad) {
-		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'update'");
 	}
 
