@@ -44,4 +44,10 @@ public class TomaSignosVitalesRepositoryImpl implements BaseRepository<TomaSigno
 		throw new UnsupportedOperationException("Unimplemented method 'delete'");
 	}
 
+	@Override
+	public boolean update(TomaSignosVitales entidad) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'update'");
+	}
+
 }

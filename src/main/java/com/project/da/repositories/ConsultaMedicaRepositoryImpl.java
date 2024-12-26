@@ -52,4 +52,10 @@ public class ConsultaMedicaRepositoryImpl implements BaseRepository<ConsultaMedi
 		throw new UnsupportedOperationException("Unimplemented method 'delete'");
 	}
 
+	@Override
+	public boolean update(ConsultaMedica entidad) { // solo se modificara el id de los detalles de los examenens.
+
+		return false;
+	}
+
 }

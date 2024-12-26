@@ -11,4 +11,6 @@ public interface BaseRepository<T> {
 	boolean save(T entidad);
 
 	boolean delete(int id);
+
+	boolean update(T entidad);
 }

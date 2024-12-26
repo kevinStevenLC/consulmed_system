@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.sql.Date;
 
-import com.project.da.models.detalles.ExamenDetalles;
+import com.project.da.models.detalles.ExamenDetallesAdicionales;
+import com.project.da.models.detalles.ExamenDetallesFisicos;
 import com.project.da.models.detalles.TomaSignosVitalesDetalles;
 import com.project.da.models.independiente.Antecedentes;
 import com.project.da.models.independiente.Enfermero;
@@ -89,11 +90,16 @@ public class PruebaIndependientes {
 				"Ganglios inflamados, dolor, rigidez");
 		ExamenAdicional examAdicional = new ExamenAdicional(1, "Laboratorio", "Análisis de sangre general");
 
-		ExamenDetalles examenDetalles = new ExamenDetalles(Arrays.asList(examAdicional), Arrays.asList(examFisico)); // !Arrays.asList(cualquierModelo)
-		examenDetalles.setId(1);
+		ExamenDetallesAdicionales examenDetallesAdicionales = new ExamenDetallesAdicionales("adicional", examAdicional,
+				consultaMedica);
+		examenDetallesAdicionales.setId(1);
+		ExamenDetallesFisicos examenDetallesFisicos = new ExamenDetallesFisicos("fisico", examFisico, consultaMedica);
+		examenDetallesFisicos.setId(1);
 
 		// agregar a la consulta medica
-		consultaMedica.setExamenDetalles(examenDetalles);
+		consultaMedica.setExamenDetallesAdicionalesList(Arrays.asList(examenDetallesAdicionales));
+		;
+		consultaMedica.setExamenDetallesFisicosList(Arrays.asList(examenDetallesFisicos));
 
 		// abrimos la ficha medica y agregamos la consulta medica
 		fichaMedica.setConsultasPrevias((new ArrayList<ConsultaMedica>()));
@@ -116,11 +122,11 @@ public class PruebaIndependientes {
 		Thread.sleep(2000);
 		System.out.printf(
 				"Examenes Fisicos%nPadecimiento: %s - Descripcion: %s - Grupo: %s%nExamen Adicional%nGrupo: %s - Descripcion: %s",
-				consultaMedica.getExamenDetalles().getExamenFisicoList().get(0).getPadecimiento(),
-				consultaMedica.getExamenDetalles().getExamenFisicoList().get(0).getDescripcion(),
-				consultaMedica.getExamenDetalles().getExamenFisicoList().get(0).getGrupo(),
-				consultaMedica.getExamenDetalles().getExamenAdicionalList().get(0).getGrupo(),
-				consultaMedica.getExamenDetalles().getExamenAdicionalList().get(0).getDescripcion());
+				consultaMedica.getExamenDetallesFisicosList().get(0).getExamenFisico().getPadecimiento(),
+				consultaMedica.getExamenDetallesFisicosList().get(0).getExamenFisico().getDescripcion(),
+				consultaMedica.getExamenDetallesFisicosList().get(0).getExamenFisico().getGrupo(),
+				consultaMedica.getExamenDetallesAdicionalesList().get(0).getExamenAdicional().getGrupo(),
+				consultaMedica.getExamenDetallesAdicionalesList().get(0).getExamenAdicional().getDescripcion());
 
 	}
 

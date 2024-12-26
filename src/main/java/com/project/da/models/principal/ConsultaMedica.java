@@ -1,6 +1,9 @@
 package com.project.da.models.principal;
 
-import com.project.da.models.detalles.ExamenDetalles;
+import java.util.List;
+
+import com.project.da.models.detalles.ExamenDetallesAdicionales;
+import com.project.da.models.detalles.ExamenDetallesFisicos;
 
 //@table
 public class ConsultaMedica {
@@ -9,14 +12,15 @@ public class ConsultaMedica {
 	String numeroConsulta;
 	FichaMedica fichaMedica; // accedes: SignosVital, Antecedentes, Paciente
 
-	ExamenDetalles examenDetalles;
+	List<ExamenDetallesFisicos> examenDetallesFisicosList;
+	List<ExamenDetallesAdicionales> examenDetallesAdicionalesList;
 	/*
 	 * ExamenFisico examenFisico;
 	 * ExamenAdicional examenAdicional;
 	 */
 
-	// |id | numero_consulta | id_fichaMedica | idExamenFisico(null) |
-	// idExamenAdicional(null) |
+	// |id | numero_consulta | id_fichaMedica | idExamenFisicoDetalles(null) ||
+	// idExamenAdicionalesDetalles(null) |
 
 	public ConsultaMedica(String numeroConsulta, FichaMedica fichaMedica) {
 		this.numeroConsulta = numeroConsulta;
@@ -47,12 +51,20 @@ public class ConsultaMedica {
 		this.fichaMedica = fichaMedica;
 	}
 
-	public ExamenDetalles getExamenDetalles() {
-		return this.examenDetalles;
+	public List<ExamenDetallesFisicos> getExamenDetallesFisicosList() {
+		return this.examenDetallesFisicosList;
 	}
 
-	public void setExamenDetalles(ExamenDetalles examenDetalles) {
-		this.examenDetalles = examenDetalles;
+	public void setExamenDetallesFisicosList(List<ExamenDetallesFisicos> examenDetallesFisicosList) {
+		this.examenDetallesFisicosList = examenDetallesFisicosList;
+	}
+
+	public List<ExamenDetallesAdicionales> getExamenDetallesAdicionalesList() {
+		return this.examenDetallesAdicionalesList;
+	}
+
+	public void setExamenDetallesAdicionalesList(List<ExamenDetallesAdicionales> examenDetallesAdicionalesList) {
+		this.examenDetallesAdicionalesList = examenDetallesAdicionalesList;
 	}
 
 	/*

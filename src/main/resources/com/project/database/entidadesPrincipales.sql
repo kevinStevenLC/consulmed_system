@@ -51,12 +51,20 @@ CREATE TABLE ConsultaMedica (
     FOREIGN KEY (idExamenDetalles) REFERENCES ExamenDetalles(id)
 );
 
--- Tabla ExamenDetalles
-CREATE TABLE ExamenDetalles (
+-- Tabla ExamenDetallesFisico
+CREATE TABLE ExamenDetallesFisico (
     id INT AUTO_INCREMENT PRIMARY KEY,
     idExamenFisico INT,
-    idExamenAdicional INT,
+    idConsultaMedica,
     FOREIGN KEY (idExamenFisico) REFERENCES ExamenFisico(id),
-    FOREIGN KEY (idExamenAdicional) REFERENCES ExamenAdicional(id)
+    FOREIGN KEY (idConsultaMedica) REFERENCES ConsultaMedica(id)
+);
+-- Tabla ExamenDetallesAdicional
+CREATE TABLE ExamenDetallesAdicional (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idExamenAdicional INT,
+    idConsultaMedica,
+    FOREIGN KEY (idExamenAdicional) REFERENCES ExamenAdicional(id),
+    FOREIGN KEY (idConsultaMedica) REFERENCES ConsultaMedica(id)
 );
 
