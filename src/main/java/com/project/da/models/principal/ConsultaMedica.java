@@ -18,8 +18,7 @@ public class ConsultaMedica {
 	// |id | numero_consulta | id_fichaMedica | idExamenFisico(null) |
 	// idExamenAdicional(null) |
 
-	public ConsultaMedica(int id, String numeroConsulta, FichaMedica fichaMedica) {
-		this.id = id;
+	public ConsultaMedica(String numeroConsulta, FichaMedica fichaMedica) {
 		this.numeroConsulta = numeroConsulta;
 		this.fichaMedica = fichaMedica;
 	}

@@ -81,14 +81,16 @@ public class PruebaIndependientes {
 		fichaMedica.setTomaSignosVitales(tomaSignosVitales);
 
 		// Al hacer una consulta medica
-		ConsultaMedica consultaMedica = new ConsultaMedica(1, "001", fichaMedica);
+		ConsultaMedica consultaMedica = new ConsultaMedica("001", fichaMedica);
+		consultaMedica.setId(1);
 
 		// agregar examen fisico y adicional
 		ExamenFisico examFisico = new ExamenFisico(1, "Examen por sistemas", "Cabeza y cuello",
 				"Ganglios inflamados, dolor, rigidez");
 		ExamenAdicional examAdicional = new ExamenAdicional(1, "Laboratorio", "Análisis de sangre general");
 
-		ExamenDetalles examenDetalles = new ExamenDetalles(1, Arrays.asList(examAdicional), Arrays.asList(examFisico));
+		ExamenDetalles examenDetalles = new ExamenDetalles(Arrays.asList(examAdicional), Arrays.asList(examFisico)); // !Arrays.asList(cualquierModelo)
+		examenDetalles.setId(1);
 
 		// agregar a la consulta medica
 		consultaMedica.setExamenDetalles(examenDetalles);

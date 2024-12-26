@@ -1,6 +1,5 @@
 package com.project.da.interfaces;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface BaseRepository<T> {
@@ -9,7 +8,7 @@ public interface BaseRepository<T> {
 
 	T findById(int id);
 
-	boolean save(T entidad) throws SQLException;
+	boolean save(T entidad);
 
 	boolean delete(int id);
 }

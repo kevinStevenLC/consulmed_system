@@ -23,7 +23,7 @@ public class TomaSignosVitalesDetallesRepositoryImpl implements BaseRepository<T
 	// Para crear un objeto de de signo vital con sus detalles, puedes tener maximo
 	// 5.
 	@Override
-	public boolean save(TomaSignosVitalesDetalles entidad) throws SQLException {
+	public boolean save(TomaSignosVitalesDetalles entidad) {
 		String query = "INSERT INTO tomasignosvitalesdetalles (idTomaSignosVitales, valor, observaciones, idSignoVital) VALUES (?, ?, ?, ?)";
 		try {
 			PreparedStatement preparedStatement = DbConexion.getConection_db().prepareStatement(query);
@@ -36,7 +36,7 @@ public class TomaSignosVitalesDetallesRepositoryImpl implements BaseRepository<T
 			if (rowInserted > 0) {
 				System.out.println("Toma de signos vitales detalles (element) agregado: " + rowInserted);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;

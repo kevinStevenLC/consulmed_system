@@ -11,8 +11,7 @@ public class ExamenDetalles {
 	List<ExamenAdicional> examenAdicionalList;
 	List<ExamenFisico> examenFisicoList;
 
-	public ExamenDetalles(int id, List<ExamenAdicional> examenAdicionalList, List<ExamenFisico> examenFisicoList) {
-		this.id = id;
+	public ExamenDetalles(List<ExamenAdicional> examenAdicionalList, List<ExamenFisico> examenFisicoList) {
 		this.examenAdicionalList = examenAdicionalList;
 		this.examenFisicoList = examenFisicoList;
 	}
