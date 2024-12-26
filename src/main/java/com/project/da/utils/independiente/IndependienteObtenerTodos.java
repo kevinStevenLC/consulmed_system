@@ -1,4 +1,4 @@
-package com.project.da.dao.independiente;
+package com.project.da.utils.independiente;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.project.da.dao.DbConexion;
+import com.project.da.database.DbConexion;
 import com.project.da.models.independiente.Antecedentes;
 import com.project.da.models.independiente.Enfermero;
 import com.project.da.models.independiente.ExamenAdicional;

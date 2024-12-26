@@ -3,7 +3,7 @@ package com.project.da.repositories;
 import java.sql.PreparedStatement;
 import java.util.List;
 
-import com.project.da.dao.DbConexion;
+import com.project.da.database.DbConexion;
 import com.project.da.interfaces.BaseRepository;
 import com.project.da.models.principal.TomaSignosVitales;
 

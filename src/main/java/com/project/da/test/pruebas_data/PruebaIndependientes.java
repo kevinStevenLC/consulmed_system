@@ -1,9 +1,8 @@
-package com.project.da.dao;
+package com.project.da.test.pruebas_data;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.sql.Date;
 
 import com.project.da.models.detalles.ExamenDetallesAdicionales;
 import com.project.da.models.detalles.ExamenDetallesFisicos;
@@ -17,6 +16,8 @@ import com.project.da.models.principal.ConsultaMedica;
 import com.project.da.models.principal.FichaMedica;
 import com.project.da.models.principal.Paciente;
 import com.project.da.models.principal.TomaSignosVitales;
+
+import java.sql.Date;
 
 public class PruebaIndependientes {
 

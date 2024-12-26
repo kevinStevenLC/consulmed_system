@@ -5,9 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.project.da.dao.DbConexion;
+import com.project.da.database.DbConexion;
 import com.project.da.interfaces.BaseRepository;
-//import com.project.da.interfaces.ConsultaMedicaRepository;
 import com.project.da.models.principal.ConsultaMedica;
 
 public class ConsultaMedicaRepositoryImpl implements BaseRepository<ConsultaMedica> {
