@@ -25,6 +25,14 @@ public class Paciente {
 		return this.id;
 	}
 
+	public String getCedula() {
+		return this.cedula;
+	}
+
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
+
 	public void setId(int id) {
 		this.id = id;
 	}

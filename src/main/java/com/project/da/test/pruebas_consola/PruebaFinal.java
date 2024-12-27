@@ -1,5 +1,6 @@
 package com.project.da.test.pruebas_consola;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -33,9 +34,11 @@ public class PruebaFinal {
 
 			switch (opcion) {
 				case "1":
+					limpiarPantalla();
 					menuGestionFichaMedica.gestionFichaMedica();
 					break;
 				case "2":
+					limpiarPantalla();
 					menuConsultaMedica.consultaMedica();
 					if (menuExamenesMedicos.finish) {
 						finalizarConsulta();
@@ -55,6 +58,19 @@ public class PruebaFinal {
 		System.out.print("Presione Enter para regresar al menú principal...");
 		scanner.nextLine();
 		menuPrincipal();
+	}
+
+	public static void limpiarPantalla() {
+		String os = System.getProperty("os.name").toLowerCase();
+		try {
+			if (os.contains("win")) {
+				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+			} else {
+				new ProcessBuilder("clear").inheritIO().start().waitFor();
+			}
+		} catch (IOException | InterruptedException ex) {
+			System.err.println("Error al limpiar la pantalla: " + ex.getMessage());
+		}
 	}
 
 	public static void main(String[] args) {

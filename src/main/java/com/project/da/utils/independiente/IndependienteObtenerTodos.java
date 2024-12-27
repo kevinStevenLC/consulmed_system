@@ -1,5 +1,7 @@
 package com.project.da.utils.independiente;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,6 +14,7 @@ import com.project.da.models.independiente.Enfermero;
 import com.project.da.models.independiente.ExamenAdicional;
 import com.project.da.models.independiente.ExamenFisico;
 import com.project.da.models.independiente.SignoVital;
+import com.project.da.models.principal.Paciente;
 
 public class IndependienteObtenerTodos {
 
@@ -130,34 +133,57 @@ public class IndependienteObtenerTodos {
 		return signoVitalesList;
 	}
 
+	public List<Antecedentes> obtenerPocosAntecedentes() {
+		List<Antecedentes> antecedentesList = new ArrayList<>();
+		String query = "(SELECT id, tipo, descripcion FROM antecedentes WHERe tipo ='Antecedentes Personales' LIMIT 2)" +
+				"UNION ALL" + "(SELECT id, tipo, descripcion FROM antecedentes WHERe tipo ='Antecedentes Patológicos' LIMIT 2)"
+				+
+				"UNION ALL"
+				+ "(SELECT id, tipo, descripcion FROM antecedentes WHERe tipo ='Antecedentes Gineco-Obstétricos' LIMIT 2)";
+		try (Connection conn = DbConexion.getConection_db();
+				PreparedStatement preparedStatement = conn.prepareStatement(query)) {
+			ResultSet rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String tipo = rs.getString("tipo");
+				String descripcion = rs.getString("descripcion");
+				Antecedentes a = new Antecedentes(id, tipo, descripcion);
+				antecedentesList.add(a);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return antecedentesList;
+
+	}
+
+	public Antecedentes obtenerAntecedentesPorId(int id) {
+		Antecedentes antecedente = null;
+		String query = "SELECT id, tipo, descripcion FROM antecedentes WHERE id= ?";
+		try (Connection conn = DbConexion.getConection_db();
+				PreparedStatement preparedStatement = conn.prepareStatement(query)) {
+			preparedStatement.setInt(1, id);
+			ResultSet rs = preparedStatement.executeQuery();
+			if (rs.next()) {
+				int antecedentesId = rs.getInt("id");
+				String tipo = rs.getString("tipo");
+				String descripcion = rs.getString("descripcion");
+				antecedente = new Antecedentes(antecedentesId, tipo, descripcion);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return antecedente;
+	}
+
 	public static void main(String[] args) throws SQLException {
-		// IndependienteObtenerTodos idt = new IndependienteObtenerTodos();
-		/*
-		 * for (Antecedentes a : idt.obtnerTodosAntecedentes()) {
-		 * System.out.printf("Tipo: %s - Descripcion: %s%n", a.getTipo(),
-		 * a.getDescripcion());
-		 * }
-		 */
-		/*
-		 * for (ExamenFisico ef : idt.obtnerTodosExamenesFisicos()) {
-		 * System.out.printf("grupo: %s - padecimiento: %s - descripcion: %s%n",
-		 * ef.getGrupo(), ef.getPadecimiento(),
-		 * ef.getDescripcion());
-		 * }
-		 */
-
-		/*
-		 * for (ExamenAdicional ea : idt.obtnerTodosExamenesAdicionales()) {
-		 * System.out.printf("grupo: %s - Descripcion: %s%n", ea.getGrupo(),
-		 * ea.getDescripcion());
-		 * }
-		 */
-
-		/*
-		 * for (SignoVital sgv : idt.obtenerTodosSignosVitales()) {
-		 * System.out.printf("Descripcion: %s%n", sgv.getDescripcion());
-		 * }
-		 */
+		IndependienteObtenerTodos idt = new IndependienteObtenerTodos();
+		for (Antecedentes a : idt.obtenerPocosAntecedentes()) {
+			System.out.println("ID: " + a.getId() + " Tipo: " + a.getTipo() + " Descripcion: " + a.getDescripcion());
+		}
 	}
 
 }
