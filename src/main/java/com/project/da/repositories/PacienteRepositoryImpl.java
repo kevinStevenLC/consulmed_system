@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.project.da.database.DbConexion;
-import com.project.da.interfaces.BaseRepository;
+
 import com.project.da.interfaces.PacienteRepository;
 import com.project.da.models.principal.Paciente;
 import com.project.da.services.PacienteService;
