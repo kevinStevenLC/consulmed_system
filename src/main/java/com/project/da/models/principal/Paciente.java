@@ -2,6 +2,7 @@ package com.project.da.models.principal;
 
 public class Paciente {
 	int id;
+	String cedula;
 	String nombres;
 	String apellidos;
 	String tipoSangre;
@@ -9,9 +10,9 @@ public class Paciente {
 	String email;
 	String genero;
 
-	public Paciente(int id, String nombres, String apellidos, String tipoSangre, String telefono, String email,
+	public Paciente(String cedula, String nombres, String apellidos, String tipoSangre, String telefono, String email,
 			String genero) {
-		this.id = id;
+		this.cedula = cedula;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.tipoSangre = tipoSangre;

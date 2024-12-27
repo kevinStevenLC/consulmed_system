@@ -24,6 +24,7 @@ public class PacienteRepositoryImpl implements BaseRepository<Paciente> {
 
 			while (rs.next()) {
 				int id = rs.getInt("id");
+				String cedula = rs.getString("cedula");
 				String nombre = rs.getString("nombres");
 				String apellidos = rs.getString("apellidos");
 				String tipoSangre = rs.getString("tipoSangre");
@@ -31,7 +32,8 @@ public class PacienteRepositoryImpl implements BaseRepository<Paciente> {
 				String email = rs.getString("email");
 				String genero = rs.getString("genero");
 
-				Paciente paciente = new Paciente(id, nombre, apellidos, tipoSangre, telefono, email, genero);
+				Paciente paciente = new Paciente(cedula, nombre, apellidos, tipoSangre, telefono, email, genero);
+				paciente.setId(id);
 				pacienteList.add(paciente);
 			}
 		} catch (SQLException e) {
@@ -51,13 +53,15 @@ public class PacienteRepositoryImpl implements BaseRepository<Paciente> {
 			ResultSet rs = preparedStatement.executeQuery();
 			if (rs.next()) {
 				int pacienteId = rs.getInt("id");
+				String cedula = rs.getString("cedula");
 				String nombres = rs.getString("nombres");
 				String apellidos = rs.getString("apellidos");
 				String tipoSangre = rs.getString("tipoSangre");
 				String telefono = rs.getString("telefono");
 				String email = rs.getString("email");
 				String genero = rs.getString("genero");
-				paciente = new Paciente(pacienteId, nombres, apellidos, tipoSangre, telefono, email, genero);
+				paciente = new Paciente(cedula, nombres, apellidos, tipoSangre, telefono, email, genero);
+				paciente.setId(pacienteId);
 			}
 
 		} catch (SQLException e) {

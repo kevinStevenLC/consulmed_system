@@ -2,6 +2,7 @@
 
 CREATE TABLE Paciente (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    cedula VARCHAR(10) NOT NULL,
     nombres VARCHAR(255) NOT NULL,
     apellidos VARCHAR(255) NOT NULL,
     tipoSangre VARCHAR(50),

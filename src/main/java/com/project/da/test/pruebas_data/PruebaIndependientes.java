@@ -29,7 +29,8 @@ public class PruebaIndependientes {
 		SimpleDateFormat fechaFormateada = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 		// paciente
-		Paciente paciente = new Paciente(1, "kevin", "lema", "o++", "99020", "kevin@gmail.com", "M");
+		Paciente paciente = new Paciente("095823823", "kevin", "lema", "o++", "99020", "kevin@gmail.com", "M");
+		paciente.setId(1);
 
 		// Antecedentes
 		Antecedentes antecedentes = new Antecedentes(1, "Personales", "Alergia al polvo");
