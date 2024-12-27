@@ -29,7 +29,7 @@ public class DbConexion {
 				Class.forName(DRIVER);
 				// Establecer conexión
 				conn = DriverManager.getConnection(URL + "/" + BD, USER, PASS);
-				System.out.println("Conexion Establecida.");
+				// System.out.println("Conexion Establecida.");
 			} catch (ClassNotFoundException | SQLException sqlE) {
 				System.err.println("Error de conexion: " + sqlE.getMessage());
 				Logger.getLogger(DbConexion.class.getName()).log(Level.SEVERE, null, sqlE);

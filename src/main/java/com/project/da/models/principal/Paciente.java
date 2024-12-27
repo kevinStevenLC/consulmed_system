@@ -21,6 +21,9 @@ public class Paciente {
 		this.genero = genero;
 	}
 
+	public Paciente() {
+	}
+
 	public int getId() {
 		return this.id;
 	}

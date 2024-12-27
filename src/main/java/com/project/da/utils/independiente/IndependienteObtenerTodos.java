@@ -14,12 +14,11 @@ import com.project.da.models.independiente.Enfermero;
 import com.project.da.models.independiente.ExamenAdicional;
 import com.project.da.models.independiente.ExamenFisico;
 import com.project.da.models.independiente.SignoVital;
-import com.project.da.models.principal.Paciente;
 
 public class IndependienteObtenerTodos {
 
 	// get Enfermeros
-	public List<Enfermero> obtenerTodosEnfermeros() throws SQLException {
+	public List<Enfermero> obtenerTodosEnfermeros() {
 		List<Enfermero> enfermeroList = new ArrayList<>();
 		String query = "SELECT id, nombresCompletos FROM enfermero;";
 		try {
@@ -33,11 +32,42 @@ public class IndependienteObtenerTodos {
 				Enfermero enfermero = new Enfermero(id, nombresCompletos);
 				enfermeroList.add(enfermero);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				DbConexion.getConection_db().close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-		DbConexion.getConection_db().close();
 		return enfermeroList;
+	}
+
+	// get Enfermero by id
+	public Enfermero obtenerEnfermeroPorId(int id) {
+		Enfermero enfermero = null;
+		String query = "SELECT id, nombresCompletos FROM enfermero WHERE id = ?;";
+		try {
+			PreparedStatement preparedStatement = DbConexion.getConection_db().prepareStatement(query);
+			preparedStatement.setInt(1, id);
+			ResultSet rs = preparedStatement.executeQuery();
+
+			if (rs.next()) {
+				int enfermeroId = rs.getInt("id");
+				String nombresCompletos = rs.getString("nombresCompletos");
+				enfermero = new Enfermero(enfermeroId, nombresCompletos);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				DbConexion.getConection_db().close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return enfermero;
 	}
 
 	public List<Antecedentes> obtnerTodosAntecedentes() throws SQLException {
@@ -131,6 +161,35 @@ public class IndependienteObtenerTodos {
 		DbConexion.getConection_db().close();
 
 		return signoVitalesList;
+	}
+
+	public SignoVital obtenerSignoVitalPorId(int id) {
+		SignoVital signoVital = null;
+		String query = "SELECT id, descripcion FROM signovital WHERE id = ?;";
+
+		try {
+			PreparedStatement preparedStatement = DbConexion.getConection_db().prepareStatement(query);
+			preparedStatement.setInt(1, id);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			if (rs.next()) {
+				int signoVitalId = rs.getInt("id");
+				String descripcion = rs.getString("descripcion");
+
+				signoVital = new SignoVital(signoVitalId, descripcion);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				DbConexion.getConection_db().close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return signoVital;
 	}
 
 	public List<Antecedentes> obtenerPocosAntecedentes() {

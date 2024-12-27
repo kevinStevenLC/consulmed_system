@@ -6,6 +6,10 @@ public class Enfermero {
 	int id;
 	String nombresCompletos;
 
+
+	public Enfermero() {
+	}
+
 	public Enfermero(int id, String nombresCompletos) {
 		this.id = id;
 		this.nombresCompletos = nombresCompletos;

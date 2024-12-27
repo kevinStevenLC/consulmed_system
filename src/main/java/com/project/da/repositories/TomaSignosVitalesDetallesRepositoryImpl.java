@@ -34,7 +34,8 @@ public class TomaSignosVitalesDetallesRepositoryImpl implements BaseRepository<T
 
 			int rowInserted = preparedStatement.executeUpdate();
 			if (rowInserted > 0) {
-				System.out.println("Toma de signos vitales detalles (element) agregado: " + rowInserted);
+				// System.out.println("Toma de signos vitales detalles (element) agregado: " +
+				// rowInserted);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

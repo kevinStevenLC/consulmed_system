@@ -48,6 +48,7 @@ public class PruebaFinal {
 					System.out.println("Saliendo del sistema...");
 					return;
 				default:
+					limpiarPantalla();
 					System.out.println("Opción no válida. Intente de nuevo.");
 			}
 		}
